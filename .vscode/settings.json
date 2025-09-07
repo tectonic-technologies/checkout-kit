@@ -1,3 +1,9 @@
 {
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit",
+    "soruce.addMissingImports": "explicit"
+  },
   "cSpell.ignoreWords": ["podspec", "swiftlint"]
 }
