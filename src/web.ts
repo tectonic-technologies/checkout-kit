@@ -8,6 +8,8 @@ import type {
   TectonicCheckoutKitPresentResult
 } from './definitions';
 
+const noop: any = () => {};
+
 class TectonicCheckoutKitWeb
   extends WebPlugin
   implements TectonicCheckoutKitPlugin
@@ -24,6 +26,14 @@ class TectonicCheckoutKitWeb
   ): Promise<TectonicCheckoutKitPreloadResult> => {
     return { status: 'ignored' };
   };
+
+  invalidate = noop;
+
+  addEventListener = noop;
+
+  removeEventListener = noop;
+
+  removeEventListeners = noop;
 }
 
 export { TectonicCheckoutKitWeb };
