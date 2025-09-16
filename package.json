@@ -51,6 +51,7 @@
     "@capacitor/docgen": "0.3.0",
     "@capacitor/ios": "7.0.0",
     "@ionic/swiftlint-config": "2.0.0",
+    "@types/node": "24.5.0",
     "eslint": "9.28.0",
     "eslint-config-prettier": "10.1.5",
     "eslint-import-resolver-typescript": "4.4.2",
