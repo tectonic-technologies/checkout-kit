@@ -1,6 +1,6 @@
 {
   "name": "@tectonic-technologies/checkout-kit",
-  "version": "0.0.2",
+  "version": "0.0.3-0",
   "description": "A capacitor plugin for Shopify Checkout Kit",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
