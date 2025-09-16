@@ -29,6 +29,10 @@
     "plugin",
     "native"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
     "verify:ios": "xcodebuild -scheme TectonicTechnologiesCheckoutKit -destination generic/platform=iOS",
