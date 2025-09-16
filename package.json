@@ -43,7 +43,8 @@
     "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.mjs",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "release": "npm run build && npm run verify && np"
+    "release": "npm run build && npm run verify && np",
+    "test": "echo 'No tests - Yolo'"
   },
   "devDependencies": {
     "@capacitor/android": "7.0.0",
