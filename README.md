@@ -35,7 +35,7 @@ invalidate() => Promise<void>
 
 #### TectonicCheckoutKitPresentOptions
 
-<code>{ checkoutUrl: string; // TODO: add other support options here as needed. // https://github.com/Shopify/checkout-sheet-kit-react-native/tree/main#configuration }</code>
+<code>{ checkoutUrl: string; }</code>
 
 
 #### TectonicCheckoutKitPresentResult
