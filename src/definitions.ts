@@ -17,17 +17,17 @@ type TectonicCheckoutKitPreloadResult = {
 };
 
 // Event types with structured data
-type CheckoutCompletedEvent = {
+type TectonicCheckoutKitCompletedEvent = {
   orderDetails: string; // Serialized OrderDetails from Shopify checkout kit
   timestamp: number;
 };
 
-type CheckoutCloseEvent = {
+type TectonicCheckoutKitCloseEvent = {
   reason: string;
   timestamp: number;
 };
 
-type CheckoutFailedEvent = {
+type TectonicCheckoutKitFailedEvent = {
   error: {
     message: string;
     errorCode: string;
@@ -36,46 +36,31 @@ type CheckoutFailedEvent = {
   };
 };
 
-type CheckoutLinkClickedEvent = {
+type TectonicCheckoutKitLinkClickedEvent = {
   uri: string;
   timestamp: number;
 };
 
-type CheckoutPixelEvent = {
+type TectonicCheckoutKitPixelEvent = {
   type: 'standard' | 'custom' | 'unknown'; // pixel event type
   timestamp: number; // event.timestamp
   name: string; // event.name
   details: string; // event data as JSON string
 };
 
-type ShopifyCheckoutEventName =
+type TectonicCheckoutKitEventName =
   | 'close'
   | 'completed'
   | 'failed'
   | 'linkClicked'
   | 'pixel';
 
-type ShopifyCheckoutEventMap = {
-  close: CheckoutCloseEvent;
-  completed: CheckoutCompletedEvent;
-  failed: CheckoutFailedEvent;
-  linkClicked: CheckoutLinkClickedEvent;
-  pixel: CheckoutPixelEvent;
-};
-
-type ShopifyCheckoutEventListener<T extends ShopifyCheckoutEventName> = (
-  event: ShopifyCheckoutEventMap[T]
-) => void;
-
-type TectonicCheckoutKitEventSubscription = {
-  remove: () => void;
-};
-
 interface TectonicCheckoutKitPlugin extends Plugin {
   present: (
     options: TectonicCheckoutKitPresentOptions
   ) => Promise<TectonicCheckoutKitPresentResult>;
 
+  // TODO: Implement preload and invalidate.
   preload: (
     options: TectonicCheckoutKitPreloadOptions
   ) => Promise<TectonicCheckoutKitPreloadResult>;
@@ -84,15 +69,12 @@ interface TectonicCheckoutKitPlugin extends Plugin {
 }
 
 export type {
-  CheckoutCloseEvent,
-  CheckoutCompletedEvent,
-  CheckoutFailedEvent,
-  CheckoutLinkClickedEvent,
-  CheckoutPixelEvent,
-  ShopifyCheckoutEventListener,
-  ShopifyCheckoutEventMap,
-  ShopifyCheckoutEventName,
-  TectonicCheckoutKitEventSubscription,
+  TectonicCheckoutKitCloseEvent,
+  TectonicCheckoutKitCompletedEvent,
+  TectonicCheckoutKitEventName,
+  TectonicCheckoutKitFailedEvent,
+  TectonicCheckoutKitLinkClickedEvent,
+  TectonicCheckoutKitPixelEvent,
   TectonicCheckoutKitPlugin,
   TectonicCheckoutKitPreloadOptions,
   TectonicCheckoutKitPreloadResult,
