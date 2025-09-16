@@ -2,8 +2,6 @@ import type { Plugin } from '@capacitor/core';
 
 type TectonicCheckoutKitPresentOptions = {
   checkoutUrl: string;
-  // TODO: add other support options here as needed.
-  // https://github.com/Shopify/checkout-sheet-kit-react-native/tree/main#configuration
 };
 
 type TectonicCheckoutKitPreloadOptions = {
@@ -24,7 +22,7 @@ type CheckoutCompletedEvent = {
   timestamp: number;
 };
 
-type CheckoutCanceledEvent = {
+type CheckoutCloseEvent = {
   reason: string;
   timestamp: number;
 };
@@ -51,14 +49,14 @@ type CheckoutPixelEvent = {
 };
 
 type ShopifyCheckoutEventName =
-  | 'canceled'
+  | 'close'
   | 'completed'
   | 'failed'
   | 'linkClicked'
   | 'pixel';
 
 type ShopifyCheckoutEventMap = {
-  canceled: CheckoutCanceledEvent;
+  close: CheckoutCloseEvent;
   completed: CheckoutCompletedEvent;
   failed: CheckoutFailedEvent;
   linkClicked: CheckoutLinkClickedEvent;
@@ -86,7 +84,7 @@ interface TectonicCheckoutKitPlugin extends Plugin {
 }
 
 export type {
-  CheckoutCanceledEvent,
+  CheckoutCloseEvent,
   CheckoutCompletedEvent,
   CheckoutFailedEvent,
   CheckoutLinkClickedEvent,
